@@ -1,0 +1,13 @@
+#!/bin/bash
+
+now=$(cmus-remote -Q | grep 'tag title' | cut -d' ' -f3-)
+if [[ "$now" == "" ]] ; then
+    now="Untitled"
+fi
+lagu=" $now"
+len=$(echo "$lagu" | wc -c)
+N=$[$(echo $(date +%s) % $len | bc)+1]
+M=$[$N+11]
+data=$(echo "$lagu" | cut -b $N"-"$M)
+lend=$[13-$(echo "$data" | wc -c)]
+echo "$data$(echo "$lagu" | cut -b 1"-"$lend)  "

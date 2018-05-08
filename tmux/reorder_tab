@@ -1,0 +1,7 @@
+#!/bin/bash
+
+i=0
+for j in $(tmux list-windows | sed -E 's/:.*//g') ; do
+    echo $(($i-$j))
+    i=$(($i+1))
+done
