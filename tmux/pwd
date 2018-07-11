@@ -1,3 +1,0 @@
-#!/bin/bash
-
-echo -e "\033[38;5;233;48;5;192m$PWD \033[00m" | sed s/\\/home\\/ramdhan/~/ | sed "s/\//  /g"
