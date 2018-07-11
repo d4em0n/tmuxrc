@@ -1,1 +1,2 @@
 # tmuxrc
+![screenshot](./screenshot.png)
